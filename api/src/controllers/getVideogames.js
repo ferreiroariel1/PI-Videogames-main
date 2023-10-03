@@ -89,7 +89,7 @@ const getVideogames = async (req, res) => {
 };
 
 
-
+//OBTENER LOS JUEGOS POR NOMBRE
 const getGamesByName = async (req, res) => {
   const { name } = req.query;
   
