@@ -1,0 +1,6 @@
+.formContainer{
+    /*background-image: url('../../assets/img/backgroundForm.jpg');*/
+    height: 200vh;
+    width: 100vw;
+    position: absolute;
+}

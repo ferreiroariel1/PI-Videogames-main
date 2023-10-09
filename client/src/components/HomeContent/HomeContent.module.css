@@ -1,0 +1,17 @@
+/* HomeContent.module.css */
+.cardsContainer {
+   display: flex;
+   flex-flow: wrap;
+   justify-content: space-around;
+   width: 100%;
+   margin: 20px auto;
+ }
+ 
+ .eachCard {
+   flex: 0 1 calc(33.33% - 20px); /* Tres tarjetas por fila con margen entre ellas */
+   margin-top: 20px; /* Aumenta el margen superior */
+   margin-left: 10px; /* Aumenta el margen izquierdo */
+   position: sticky;
+   top: 20px; /* Espacio superior fijo al hacer scroll */
+ }
+ 

@@ -1,0 +1,6 @@
+.landingContainer{
+    background-image: url('../../assets/img/landingPage.jpg');
+    width: 100vw;
+    height: 100vh;
+    position: center center;
+}

@@ -1,0 +1,177 @@
+/*.hypnotic {
+    width: 67.2px;
+    height: 20px;
+    margin: 0 auto;
+    margin-top: 10%;
+    border: 2.2px solid #ff47c8;
+    border-radius: 50%;
+    display: grid;
+    animation: hypnotic-ds34hk 2s infinite linear;
+ }
+ 
+ .hypnotic:before,
+ .hypnotic:after {
+    content: "";
+    grid-area: 1/1;
+    border: inherit;
+    border-radius: 50%;
+    animation: inherit;
+    animation-duration: 3s;
+ }
+ 
+ .hypnotic:after {
+    --s: -1;
+ }
+ 
+ @keyframes hypnotic-ds34hk {
+    100% {
+       transform: rotate(calc(var(--s,1)*1turn));
+    }
+ }
+*/
+ .legend{
+  font-size: larger;
+  color: hotpink;
+  background-color: rgb(242, 144, 193, 0.3);
+ }
+ .form{
+   width: 30vw;
+   height: 100vh;
+   margin: 0 auto;
+   margin-top: 5%;
+   background-color: rgba(0, 0, 0, 0.4);
+   
+  }
+  .fieldset{
+    margin-top: 2%;
+    border: 0.15em outset hotpink;
+ }
+ .label{
+   color: rgb(75, 160, 36);
+   font-size: large;
+   margin-top: 5%;
+ }
+ .labelCb{
+  color: rgb(14, 14, 14);
+  font-size: large;
+ }
+ .labelsPyG{
+  font-size: medium;
+  color: rgb(19, 19, 20);
+  margin-top: 1.5%;
+ }
+ .textareaContainer{
+   display: flex;
+   flex-direction: column;
+  }
+  .textarea{
+    margin-left: 15%;
+    width: 20vw;
+    resize: none;
+    text-indent: 2%;
+    font-size: large;
+    border-radius: 6px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+    color: aliceblue;
+ }
+ .input{
+   text-indent: 2%;
+   background-color: rgb(18, 17, 17, 0.3);
+   color: aliceblue;
+ }
+ .error{
+   color: red;
+ }
+ .checkBox{
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: center;
+   font-size: medium;
+   font-weight: bold;
+ }
+ .buttons{
+  margin-left: 3%;
+  margin-top: 3%;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  position: relative;
+  text-shadow: 0px 2px 0px rgba(206, 198, 198, 0.81);
+  font-size: medium;
+  background-color: rgb(12, 11, 11, 0.3);
+  color: white;
+ }
+ .buttons:hover, .buttons:focus{
+  box-shadow: 15px 15px 30px rgb(98, 58, 230), -15px -15px 30px rgb(205, 52, 197);
+  cursor: pointer;
+  color: rgb(74, 77, 251);
+  font-size: large;
+  font-weight: 900;
+ }
+.error{
+  color: red;
+  font-weight: bold;
+  font-size: large;
+}
+
+ 
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+  gap: 7px;
+  position: relative;
+}
+
+.container .labeltext {
+  color: #fff;
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  margin-left: 45%;
+  top: 3px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.inputtext {
+  margin: 0 auto;
+  width: 200px;
+  height: 45px;
+  border: none;
+  outline: none;
+  padding: 0px 7px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  background-color: transparent;
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.inputtext:focus {
+  border: 2px solid transparent;
+  color: #fff;
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.container .inputtext:valid ~ .labeltext,
+.container .inputtext:focus ~ .labeltext {
+  transition: 0.3s;
+  padding-left: 2px;
+  transform: translateY(-35px);
+}
+
+.container .inputtext:valid,
+.container .inputtext:focus {
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}

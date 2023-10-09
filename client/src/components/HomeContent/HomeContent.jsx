@@ -63,6 +63,8 @@ const HomeContent = () => {
     setInputP(1);
   };
 
+ 
+
   return(
     <>
     <NavBar setPagina={setPagina} setInputP={setInputP} handleChangeByName={handleChangeByName} handleChangeByRating={handleChangeByRating} handleChangeCreation={handleChangeCreation} handleChangeGenres={handleChangeGenres}  genres={genres}/>

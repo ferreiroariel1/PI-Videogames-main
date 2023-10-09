@@ -16,23 +16,23 @@ module.exports = (sequelize) => {
     },
     description:{
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
     },
     plataforms:{
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true,
     },
-    image:{
+    background_image:{
       type: DataTypes.STRING,
       allowNull: true,
     },
-    release:{
+    released:{
       type: DataTypes.DATE,
       allowNull: true,
     },
     rating:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     createInDb: {
       // si el juego fue creado por el usuario o no

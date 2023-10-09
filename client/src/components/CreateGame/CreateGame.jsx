@@ -57,26 +57,26 @@ const CreateGame = () => {
         
     };
 
-
+//VALIDACION
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if (form.name.trim() === '' || form.name > 10) {
-            return setErrors({...errors, name: 'Please fill this field'});    
+            return setErrors({...errors, name: 'por favor completar este campo'});    
         } else if (!/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|gif)/g.test(form.background_image)) {
-            return setErrors({ ...errors,  background_image:'Please put a valid url for a image' });
+            return setErrors({ ...errors,  background_image:'Por favor ponga una URL válida para una imagen' });
         } else if (form.description.trim() === '') {
-            return setErrors({ ...errors,  description:'Please enter a description' });
+            return setErrors({ ...errors,  description:'Por favor ingresa una descripción' });
         } else if (form.released === '') {
-            return setErrors({ ...errors,  released: 'Please enter a released date' });
+            return setErrors({ ...errors,  released: 'Por favor ingresa una fecha de lanzamiento' });
         } else if (form.rating === 0 ) {
-            return setErrors({ ...errors,  rating:'Please put a rating' });
+            return setErrors({ ...errors,  rating:'Por favor pon una calificación' });
         } else if (form.rating > 5 ) {
             return setErrors({ ...errors,   rating:'Please put a rating bethween 1 and 5' });
         } else if(form.platforms.length === 0 || form.platforms.length > 5 ){
-            return setErrors({ ...errors, platforms:'Please put platforms bethween 1 and 5'});
+            return setErrors({ ...errors, platforms:'Por favor coloque las plataformas, limite entre 1 y 5.'});
         } else if(form.genres.length === 0 || form.genres.length > 4 ){
-            return setErrors({ ...errors,  genres:'Please put a genres bethween 1 and 5'});
+            return setErrors({ ...errors,  genres:'Por favor ponga un género, limite entre 1 y 5'});
         } else {
             dispatch(postNewGame(form));
             navigate('/home');

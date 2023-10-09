@@ -1,0 +1,52 @@
+.container{
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-left: 40%;
+    /* margin-top: 1vh; */
+}
+.previousButton{
+    border: 0.15em bold black;
+    background-color: cornsilk;
+    border-radius: 5px;
+    height: 4vh;
+    margin-right: 0.5em;
+    margin-top: 0.2em;
+    cursor: pointer;
+}
+.previousButton[disabled]{
+    background-color: rgb(242, 239, 227);
+    cursor: no-drop;
+}
+.previousImg{
+    max-width: 1em;
+}
+
+.nextButton{
+    border: 0.15em bold black;
+    background-color: cornsilk;
+    border-radius: 5px;
+    height: 4vh;
+    margin-left: 0.5em;
+    margin-top: 0.2em;
+    cursor: pointer;
+}
+.nextButton[disabled]{
+    background-color: rgb(242, 239, 227);
+    cursor: no-drop;
+}
+.nextImg{
+    max-width: 1em;
+}
+
+.paginasContainer{
+   margin-left: 0.5em;
+   color: azure;
+}
+
+.input{
+   width: 2vw; 
+   height: 3vh;
+   text-align: center;
+   margin-top: 0.5em;
+}

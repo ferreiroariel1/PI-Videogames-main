@@ -16,11 +16,10 @@ import { GET_ALL_GAMES,
 
 // JUEGOS
 //obtiene los videojuegos del (backend)
-//obtener directamente de la api https://api.rawg.io/api/games
 export const getAllGames = () => {
     return async (dispatch) => {
         try {
-            await axios.get(`/videogames`)
+            await axios.get("http://localhost:3001/videogames")
             .then((res) => {
                 return dispatch({ type: GET_ALL_GAMES, payload: res.data })
             })
@@ -33,12 +32,13 @@ export const getAllGames = () => {
     };
 };
 
+
 //obtiene los videojuegos por nombre del backend
 //directamente de la api https://api.rawg.io/api/games?search={game}
 export const getGameByName = (name) => {
     return async (dispatch) => {
         try {
-            const game = await axios.get(`/videogames?name=${name}`);
+            const game = await axios.get(`http://localhost:3001/videogames/name?name=${name}`);
             const response = game.data;
             return dispatch({ type: GET_GAME_BY_NAME, payload: response });
         } catch (error) {
@@ -55,7 +55,7 @@ export const getGameByName = (name) => {
 export const getGameDetail = (idVideogame) => {
     return async (dispatch) => {
         try {
-            const response = await axios.get('/pokemons/' + idVideogame);
+            const response = await axios.get(`http://localhost:3001/videogames/${idVideogame}`);
             const game = response.data;
             return dispatch({ type: GET_GAME_DETAIL, payload: game });
         } catch (error) {
@@ -68,6 +68,7 @@ export const getGameDetail = (idVideogame) => {
 };
 
 
+
 export const clearDetail = () => {
     return { type: CLEAR_DETAIL};
 };
@@ -76,7 +77,7 @@ export const clearDetail = () => {
 export const postNewGame = (game) => {
     return async (dispatch) => {
         try {
-            const response = await axios.post('/pokemons/' , game);
+            const response = await axios.post("http://localhost:3001/videogames" , game);
             return dispatch({ type: POST_NEW_GAME, payload: response });
         } catch (error) {
             return dispatch({
@@ -95,7 +96,7 @@ export const postNewGame = (game) => {
 export const getAllGenres = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get('/genres');
+            const response = await axios.get('http://localhost:3001/genres');
             const genres = response.data;
             return dispatch({ type: GET_ALL_GENRES, payload: genres });
         } catch (error) {
