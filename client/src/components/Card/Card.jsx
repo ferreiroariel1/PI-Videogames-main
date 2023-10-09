@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import ratingImg from '../../assets/img/rating.png';
-//import style from './Card.module.css';
+import styles from './Card.module.css'; // Importa estilos desde un archivo CSS
 
 const Card = ({ id, background_image, name, genres, rating }) => {
   return (
-    //link me lleva a los detalles del videojuego
-    <Link to={`/videogames/${id}`}> 
-    <div>
-      <img src={background_image} alt='description'/>
-      <h1>{name}</h1>
-      <h3>{genres}</h3>
-      <h3>Rating:{rating}</h3>
-    </div>
+    <Link to={`/videogames/${id}`} className={styles.card}>
+      <div>
+        <img src={background_image} alt={`Background of ${name}`} className={styles.image} />
+        <h2 className={styles.name}>{name}</h2>
+        <div className={styles.genres}>
+          <h3>Genres:</h3>
+          <p>{genres.join(', ')}</p>
+        </div>
+        <div className={styles.rating}>
+          <h3>Rating:</h3>
+          <p>{rating}</p>
+        </div>
+      </div>
     </Link>
   );
 };
-
-//Card renderiza una tarjeta que muestra información básica sobre un videojuego
 
 export default Card;

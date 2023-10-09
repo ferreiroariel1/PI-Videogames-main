@@ -1,6 +1,16 @@
 import axios from 'axios';
 //import { URL_BASE } from '../../utils/index';
-import { GET_ALL_GAMES, ERROR, GET_GAME_BY_NAME, FILTER_BY_CREATION, FILTER_BY_GENRE, ORDER_BY_NAME, ORDER_BY_RATING, GET_GAME_DETAIL, CLEAR_DETAIL, GET_ALL_GENRES, POST_NEW_GAME } from './actionstypes';
+import { GET_ALL_GAMES,
+         ERROR,
+         GET_GAME_BY_NAME,
+         FILTER_BY_CREATION,
+         FILTER_BY_GENRE,
+         ORDER_BY_NAME,
+         ORDER_BY_RATING,
+         GET_GAME_DETAIL,
+         CLEAR_DETAIL,
+         GET_ALL_GENRES,
+         POST_NEW_GAME } from './actionstypes';
  
 
 
@@ -10,7 +20,7 @@ import { GET_ALL_GAMES, ERROR, GET_GAME_BY_NAME, FILTER_BY_CREATION, FILTER_BY_G
 export const getAllGames = () => {
     return async (dispatch) => {
         try {
-            await axios.get(/*`/videogames`*/'https://api.rawg.io/api/games')
+            await axios.get(`/videogames`)
             .then((res) => {
                 return dispatch({ type: GET_ALL_GAMES, payload: res.data })
             })
@@ -28,7 +38,7 @@ export const getAllGames = () => {
 export const getGameByName = (name) => {
     return async (dispatch) => {
         try {
-            const game = await axios.get(/*`/videogames?name=${name}`*/'https://api.rawg.io/api/games?search={game}');
+            const game = await axios.get(`/videogames?name=${name}`);
             const response = game.data;
             return dispatch({ type: GET_GAME_BY_NAME, payload: response });
         } catch (error) {
@@ -45,7 +55,7 @@ export const getGameByName = (name) => {
 export const getGameDetail = (idVideogame) => {
     return async (dispatch) => {
         try {
-            const response = await axios.get(/*`/videogames/' + ${idVideogame}`*/'https://api.rawg.io/api/games/{id}');
+            const response = await axios.get('/pokemons/' + idVideogame);
             const game = response.data;
             return dispatch({ type: GET_GAME_DETAIL, payload: game });
         } catch (error) {
@@ -66,7 +76,7 @@ export const clearDetail = () => {
 export const postNewGame = (game) => {
     return async (dispatch) => {
         try {
-            const response = await axios.post(`/videogames`, game);
+            const response = await axios.post('/pokemons/' , game);
             return dispatch({ type: POST_NEW_GAME, payload: response });
         } catch (error) {
             return dispatch({
@@ -85,7 +95,7 @@ export const postNewGame = (game) => {
 export const getAllGenres = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get(/*`/genres`*/'https://api.rawg.io/api/genres');
+            const response = await axios.get('/genres');
             const genres = response.data;
             return dispatch({ type: GET_ALL_GENRES, payload: genres });
         } catch (error) {
