@@ -1,17 +1,17 @@
 /* HomeContent.module.css */
+
 .cardsContainer {
-   display: flex;
-   flex-flow: wrap;
-   justify-content: space-around;
-   width: 100%;
-   margin: 20px auto;
- }
- 
- .eachCard {
-   flex: 0 1 calc(33.33% - 20px); /* Tres tarjetas por fila con margen entre ellas */
-   margin-top: 20px; /* Aumenta el margen superior */
-   margin-left: 10px; /* Aumenta el margen izquierdo */
-   position: sticky;
-   top: 20px; /* Espacio superior fijo al hacer scroll */
- }
- 
+  display: flex;
+  justify-content: center; /* Centra las cartas horizontalmente */
+  align-items: center; /* Centra las cartas verticalmente */
+  flex-wrap: wrap; /* Permite que las cartas se envuelvan a la siguiente línea si es necesario */
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px 10px 10px 0; /* Añade un poco de espacio superior, inferior y solo a la derecha */
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+.eachCard {
+  flex: 0 0 calc(33.33% - 10px); /* Tres tarjetas por columna con margen entre ellas */
+  margin: 0 5px; /* Margen horizontal entre las cartas (ajustado a 5px) */
+}

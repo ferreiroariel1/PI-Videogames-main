@@ -22,6 +22,7 @@ const GameDetail = () => {
 
 
   return (
+    <div className={style.fondo}>
     <div className={style.detailContainer}>
       <NavBar />
       {
@@ -39,6 +40,7 @@ const GameDetail = () => {
              <p className={style.id}>Game number: {game.id}</p>
           </div> : <DetailLoader />
       }
+    </div>
     </div>
   );
 };

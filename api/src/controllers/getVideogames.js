@@ -10,26 +10,38 @@ const { API_KEY } = process.env;
 const getApiInfo = async () => {
   let gamesArr = [];
   let urlApi = `https://api.rawg.io/api/games?key=${API_KEY}`;
+
   try {
-    const urlData = await axios.get(urlApi);
-    urlData.data.results.map((e) => {
-      gamesArr.push({
-        id: e.id,
-        name: e.name,
-        background_image: e.background_image,
-        released: e.released,
-        rating: e.rating,
-        platforms: e.platforms.map((e) => e.platform.name),
-        genres: e.genres.map((e) => e.name),
+    for (let i = 0; i < 5; i++) {
+      const urlData = await axios.get(urlApi);
+      const apiVideogamesRaw = urlData.data.results;
+
+      // Filtrar y agregar juegos únicos a gamesArr
+      apiVideogamesRaw.forEach((e) => {
+        if (!gamesArr.some((game) => game.id === e.id)) {
+          gamesArr.push({
+            id: e.id,
+            name: e.name,
+            background_image: e.background_image,
+            released: e.released,
+            rating: e.rating,
+            platforms: e.platforms.map((platform) => platform.platform.name),
+            genres: e.genres.map((genre) => genre.name),
+          });
+        }
       });
-    });
-    urlApi = urlData.data.next;
+
+      urlApi = urlData.data.next;
+    }
 
     return gamesArr;
   } catch (error) {
     console.log("Error en getApiInfo", error);
   }
 };
+
+// Resto del código de la función getVideogames permanece sin cambios
+
 
 //BUSCA TODOS LOS VIDEOJUEGOS Y TAMBIEN RECUPERA LOS NOMBRES DE LOS GENEROS ASOCIADOS A ESOS VIDEOJUEGOS
 //findAll: permite realizar consultas para recuperar todos los registros de una tabla en una base de datos 
@@ -68,25 +80,25 @@ const getDbInfo = async () => {
 //RUTA 1: OBTENER TODOS LOS JUEGOS
 
 const getVideogames = async (req, res) => {
- console.log("estos son los juegos")
-  try {
-    const apiInfo = await getApiInfo();
-    const dbInfo = await getDbInfo();
-    //caso: existen juegos creados en la base de datos
-    if (dbInfo) {
-      const infoTotal = [...apiInfo, ...dbInfo];
-      
-      return res.status(200).json(infoTotal);    
-    }
-    //caso: no existen juegos creados en la base de datos
-    let infoTotal2 = [...apiInfo];
-    return res.status(200).json(infoTotal2);
-  
-  } catch (error) {
-    return res.status(400).send(error);
-  }
-
-};
+  console.log("estos son los juegos")
+   try {
+     const apiInfo = await getApiInfo();
+     const dbInfo = await getDbInfo();
+     //caso: existen juegos creados en la base de datos
+     if (dbInfo) {
+       const infoTotal = [...apiInfo, ...dbInfo];
+       
+       return res.status(200).json(infoTotal);    
+     }
+     //caso: no existen juegos creados en la base de datos
+     let infoTotal2 = [...apiInfo];
+     return res.status(200).json(infoTotal2);
+   
+   } catch (error) {
+     return res.status(400).send(error);
+   }
+ 
+ };
 
 
 
@@ -163,9 +175,7 @@ const getVideogameById = async (req, res) => {
         description: gameApi.data.description,
         background_image: gameApi.data.background_image,
         released: gameApi.data.released,
-        genres: gameApi.data.genres.map((gen) => {
-          return { id: gen.id, name: gen.name };
-        }),
+        genres: gameApi.data.genres.map((gen) => gen.name),
         rating: gameApi.data.rating,
         platforms: gameApi.data.platforms.map((el) => el.platform.name),
       };

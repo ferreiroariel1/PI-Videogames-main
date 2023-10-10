@@ -1,0 +1,87 @@
+/* NavBar.module.css */
+.navContainer {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.3); /* Fondo con transparencia */
+  padding: 10px 20px;
+  color: white;
+  z-index: 100;
+  backdrop-filter: blur(5px); /* Agrega un efecto de desenfoque al fondo */
+  transition: background-color 0.3s;
+}
+
+/* Resto de tus estilos existentes aquí */
+
+.filAndOrd {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo para los botones en la esquina izquierda */
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para los filtros y la barra de búsqueda en la esquina derecha */
+.filterAndSearchContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre elementos */
+}
+
+/* Estilo para el botón en la esquina izquierda */
+.buttons {
+  background-color: #555; /* Cambia el color de fondo del botón según tus preferencias */
+  color: white; /* Cambia el color del texto del botón según tus preferencias */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Cambia el color de texto de los botones "New Game" y "Home" */
+.buttons a {
+  color: white; /* Cambia el color del texto de los botones según tus preferencias */
+  text-decoration: none; /* Quita la decoración de subrayado de los enlaces */
+}
+
+.buttons:hover {
+  background-color: #777; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}
+
+/* Estilo para los selectores de filtros */
+.filterSelect {
+  padding: 10px;
+  background-color: rgba(51, 51, 51, 0.3); /* Fondo con transparencia */
+  color: white; /* Cambia el color del texto del selector según tus preferencias */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Agrega sombra */
+}
+
+/* Estilo para la barra de búsqueda */
+.searchBar {
+  padding: 10px;
+  background-color: rgba(51, 51, 51, 0.3); /* Fondo con transparencia */
+  color: white; /* Cambia el color del texto de la barra de búsqueda según tus preferencias */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Agrega sombra */
+}
+
+/* Estilos para los enlaces de géneros */
+.genreLink {
+  text-decoration: none;
+  color: white; /* Cambia el color del texto del enlace según tus preferencias */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.genreLink:hover {
+  background-color: #555; /* Cambia el color de fondo del enlace al pasar el cursor sobre él */
+}

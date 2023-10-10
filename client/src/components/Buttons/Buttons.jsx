@@ -20,7 +20,7 @@ const Buttons = () => {
       
         <button><Link to='/home'>Home</Link></button>
         
-        <button><Link to='/form'>Create a New Game</Link></button>
+        <button><Link to='/form'>New Game</Link></button>
         
     </div>
   );

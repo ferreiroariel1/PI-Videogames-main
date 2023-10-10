@@ -1,72 +1,76 @@
-/* Card.module.css */
 .card {
-    position: relative; /* Para que los seudo-elementos sean relativos a esta tarjeta */
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    border: none; /* Quita el borde */
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
-    transition: transform 0.3s ease-in-out;
-    background-color: transparent; /* Fondo transparente */
-    overflow: hidden; /* Oculta contenido que se desborde */
-  }
-  
-  .card::before {
-    content: ""; /* Seudo-elemento antes de la tarjeta */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7); /* Fondo con opacidad */
-    z-index: -1; /* Coloca detrás de otros contenidos */
-    opacity: 0; /* Inicialmente invisible */
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .card:hover::before {
-    opacity: 1; /* Se vuelve visible al pasar el cursor sobre la tarjeta */
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .image {
-    width: 100%; /* Aumenta el tamaño de la imagen */
-    height: auto;
-    border-radius: 10px 10px 0 0;
-    transition: filter 0.3s ease-in-out;
-  }
-  
-  .card:hover .image {
-    filter: brightness(0.8); /* Reduce el brillo de la imagen al pasar el cursor sobre la tarjeta */
-  }
-  
-  .name {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #333;
-  }
-  
-  .genres, .rating {
-    background-color: #333;
-    color: white;
-    padding: 3px; /* Reduce el espacio para género y rating */
-    border-radius: 0 0 10px 10px;
-    margin-top: 5px; /* Reduce el espacio superior */
-  }
-  
-  .rating {
-    font-size: 14px; /* Reduce el tamaño de fuente de la calificación */
-  }
-  
-  .rating p {
-    margin: 0;
-    font-size: 12px; /* Tamaño de fuente reducido */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Borde negro fino */
+  border-radius: 0; /* Sin bordes redondeados */
+  padding: 20px;
+  margin: 15px;
+  width: 240px;
+  transition: transform 0.3s ease-in-out;
+  background-color: #0a0a0a; /* Fondo gris */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Seudo-elemento antes de la tarjeta */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.5); /* Borde blanco brillante */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 0; /* Sin bordes redondeados */
+}
+
+/* Efecto de desenfoque al pasar el cursor sobre la tarjeta */
+.card:hover::before {
+  opacity: 1;
+  backdrop-filter: blur(8px);
+}
+
+/* Efecto de escala al pasar el cursor sobre la tarjeta */
+.card:hover {
+  transform: scale(1.07); /* Aumenta el valor de escala */
+}
+
+/* Estilos para la imagen */
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* Sin bordes redondeados en la imagen */
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Reducción del brillo de la imagen al pasar el cursor sobre la tarjeta */
+.card:hover .image {
+  filter: brightness(0.85); /* Ajusta el brillo */
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+}
+
+/* Estilo para el nombre de la tarjeta */
+.name {
+  font-size: 20px;
+  margin: 10px 0;
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Estilo para géneros y calificación */
+.genres,
+.rating {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 0;
+  border-radius: 0; /* Sin bordes redondeados en géneros y calificación */
+  margin-top: 5px;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none; /* Elimina el subrayado */
+}

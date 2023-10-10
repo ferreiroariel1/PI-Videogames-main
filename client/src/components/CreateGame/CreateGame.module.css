@@ -1,177 +1,125 @@
-/*.hypnotic {
-    width: 67.2px;
-    height: 20px;
-    margin: 0 auto;
-    margin-top: 10%;
-    border: 2.2px solid #ff47c8;
-    border-radius: 50%;
-    display: grid;
-    animation: hypnotic-ds34hk 2s infinite linear;
- }
- 
- .hypnotic:before,
- .hypnotic:after {
-    content: "";
-    grid-area: 1/1;
-    border: inherit;
-    border-radius: 50%;
-    animation: inherit;
-    animation-duration: 3s;
- }
- 
- .hypnotic:after {
-    --s: -1;
- }
- 
- @keyframes hypnotic-ds34hk {
-    100% {
-       transform: rotate(calc(var(--s,1)*1turn));
-    }
- }
-*/
- .legend{
-  font-size: larger;
-  color: hotpink;
-  background-color: rgb(242, 144, 193, 0.3);
- }
- .form{
-   width: 30vw;
-   height: 100vh;
-   margin: 0 auto;
-   margin-top: 5%;
-   background-color: rgba(0, 0, 0, 0.4);
-   
-  }
-  .fieldset{
-    margin-top: 2%;
-    border: 0.15em outset hotpink;
- }
- .label{
-   color: rgb(75, 160, 36);
-   font-size: large;
-   margin-top: 5%;
- }
- .labelCb{
-  color: rgb(14, 14, 14);
-  font-size: large;
- }
- .labelsPyG{
-  font-size: medium;
-  color: rgb(19, 19, 20);
-  margin-top: 1.5%;
- }
- .textareaContainer{
-   display: flex;
-   flex-direction: column;
-  }
-  .textarea{
-    margin-left: 15%;
-    width: 20vw;
-    resize: none;
-    text-indent: 2%;
-    font-size: large;
-    border-radius: 6px;
-    background-color: transparent;
-    box-shadow: 3px 3px 10px rgba(0,0,0,1),
-    -1px -1px 6px rgba(255, 255, 255, 0.4);
-    color: aliceblue;
- }
- .input{
-   text-indent: 2%;
-   background-color: rgb(18, 17, 17, 0.3);
-   color: aliceblue;
- }
- .error{
-   color: red;
- }
- .checkBox{
-   display: flex;
-   flex-direction: row-reverse;
-   justify-content: center;
-   font-size: medium;
-   font-weight: bold;
- }
- .buttons{
-  margin-left: 3%;
-  margin-top: 3%;
-  padding: 0.5em;
-  border-radius: 0.5em;
-  position: relative;
-  text-shadow: 0px 2px 0px rgba(206, 198, 198, 0.81);
-  font-size: medium;
-  background-color: rgb(12, 11, 11, 0.3);
+.element {
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco brillante */
+  color: white; /* Cambiamos el color a blanco */
+  border: 2px solid rgb(253, 252, 252); /* Borde con color hotpink */
+  border-radius: 10px; /* Aumenta la suavidad de los bordes */
+  padding: 15px; /* Aumenta el espacio interior */
+  box-shadow: 5px 5px 10px rgba(255, 254, 254, 0.5), /* Sombra suave */
+    0 0 10px rgba(255, 255, 255, 0.7); /* Efecto de sombra para crear el efecto "neón" */
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, font-size 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Agrega el efecto de transición al "neón" */
+  text-shadow: 0 0 10px rgb(255, 255, 255); /* Efecto de sombra para crear el efecto "neón" */
+}
+
+/* Estilo para el formulario */
+.form {
+  width: 40%; /* Cambiado al 100% para que el fondo gris se extienda por todo el contenedor */
+  height: 230vh;
+  margin: 0 auto;
+  margin-top: 5%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px; /* Aumenta el espacio interior */
+  border-radius: 10px; /* Aumenta la suavidad de los bordes */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4); /* Sombra suave */
+}
+
+/* Resto de tus estilos... */
+
+
+/* Estilo para el fieldset */
+.fieldset {
   color: white;
- }
- .buttons:hover, .buttons:focus{
-  box-shadow: 15px 15px 30px rgb(98, 58, 230), -15px -15px 30px rgb(205, 52, 197);
-  cursor: pointer;
-  color: rgb(74, 77, 251);
+  border: 2px solid rgb(255, 255, 255); /* Borde con color hotpink */
+  border-radius: 10px; /* Aumenta la suavidad de los bordes */
+  padding: 10px; /* Aumenta el espacio interior */
+}
+
+/* Estilo para las etiquetas */
+.label {
+  font-weight: bold; /* Hace que las letras sean más negritas */
+  color: rgb(253, 252, 252);
   font-size: large;
-  font-weight: 900;
- }
-.error{
-  color: red;
-  font-weight: bold;
+  margin-top: 10px; /* Espaciado superior */
+}
+
+.labelCb {
+  color: rgb(252, 251, 251);
   font-size: large;
 }
 
- 
+.labelsPyG {
+  font-size: medium;
+  color: rgb(253, 253, 253);
+  margin-top: 10px; /* Espaciado superior */
+}
 
-
-.container {
+/* Estilo para el contenedor de textarea */
+.textareaContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 7%;
-  gap: 7px;
-  position: relative;
+  margin-top: 10px; /* Espaciado superior */
 }
 
-.container .labeltext {
-  color: #fff;
-  font-size: 15px;
-  padding-left: 10px;
-  position: absolute;
-  margin-left: 45%;
-  top: 3px;
-  transition: 0.3s;
-  pointer-events: none;
-}
-
-.inputtext {
-  margin: 0 auto;
-  width: 200px;
-  height: 45px;
-  border: none;
-  outline: none;
-  padding: 0px 7px;
-  border-radius: 6px;
-  color: #fff;
-  font-size: 15px;
-  background-color: transparent;
-  box-shadow: 3px 3px 10px rgba(0,0,0,1),
-  -1px -1px 6px rgba(255, 255, 255, 0.4);
-}
-
-.inputtext:focus {
+/* Estilo para el textarea */
+.textarea {
+  margin-left: auto; /* Mueve el textarea al centro horizontalmente */
+  margin-right: auto; /* Mueve el textarea al centro horizontalmente */
+  width: 70%; /* Ajusta el ancho para que sea responsivo */
+  resize: none;
+  font-size: large;
+  border-radius: 10px; /* Aumenta la suavidad de los bordes */
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+  color: white;
   border: 2px solid transparent;
-  color: #fff;
-  box-shadow: 3px 3px 10px rgba(0,0,0,1),
-  -1px -1px 6px rgba(255, 255, 255, 0.4),
-  inset 3px 3px 10px rgba(0,0,0,1),
-  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  transition: border-color 0.3s ease-in-out;
 }
 
-.container .inputtext:valid ~ .labeltext,
-.container .inputtext:focus ~ .labeltext {
-  transition: 0.3s;
-  padding-left: 2px;
-  transform: translateY(-35px);
+.textarea:focus {
+  border-color: rgb(14, 13, 13); /* Cambia el color del borde al enfocar */
 }
 
-.container .inputtext:valid,
-.container .inputtext:focus {
-  box-shadow: 3px 3px 10px rgba(0,0,0,1),
-  -1px -1px 6px rgba(255, 255, 255, 0.4),
-  inset 3px 3px 10px rgba(0,0,0,1),
-  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+/* Estilo para los inputs */
+.input {
+  font-weight: bold; /* Hace que las letras sean más negritas */
+  text-indent: 2%;
+  background-color: rgba(18, 17, 17, 0.3); /* Fondo semitransparente */
+  color: white;
+  border: 2px solid rgb(18, 17, 17); /* Borde con color hotpink */
+  border-radius: 10px; /* Aumenta la suavidad de los bordes */
+  font-size: large;
+  margin-top: 10px; /* Espaciado superior */
 }
+
+/* Estilo para los checkboxes */
+.checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 10px; /* Espaciado superior */
+}
+
+/* Estilo para los botones */
+.buttons {
+  font-weight: bold; /* Hace que las letras sean más negritas */
+  margin-left: auto; /* Mueve los botones al centro horizontalmente */
+  margin-right: auto; /* Mueve los botones al centro horizontalmente */
+  margin-top: 10px; /* Espaciado superior */
+  padding: 15px; /* Aumenta el espacio interior */
+  border-radius: 10px; /* Aumenta la suavidad de los bordes */
+  font-size: large;
+  background-color: rgba(12, 11, 11, 0.3); /* Fondo semitransparente */
+  color: rgb(253, 251, 251);
+  border: 2px solid rgb(245, 237, 241); /* Borde con color hotpink */
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.buttons:hover,
+.buttons:focus {
+  box-shadow: 15px 15px 30px rgba(255, 255, 255, 0.7), -15px -15px 30px rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  color: rgb(253, 251, 251);
+  font-size: large;
+  font-weight: bold;
+};
+

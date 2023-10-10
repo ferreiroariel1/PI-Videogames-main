@@ -1,6 +1,53 @@
-.landingContainer{
-    background-image: url('../../assets/img/landingPage.jpg');
-    width: 100vw;
-    height: 100vh;
-    position: center center;
+/* Estilo para el contenedor de la página de aterrizaje */
+.landingContainer {
+  background-image: url('../../assets/img/landin.jpg');
+  background-size: cover; 
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+};
+
+/* Estilo para el contenedor de la página de aterrizaje */
+.landingContainer {
+  background-image: url('../../assets/img/landin.jpg');
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.socialDiv {
+  position: fixed;
+  bottom: 0;
+  left: 10px; /* Ajusta este valor según sea necesario para mover los botones hacia la izquierda */
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.githubButton,
+.instagramButton,
+.linkedinButton {
+  width: 130px; /* Ancho deseado para los botones (ajústalo según tus necesidades) */
+  margin: 10px -20px; /* Espacio vertical entre los botones (ajústalo según tus preferencias) */
+}
+
+.redesimg {
+  width: 40%;
+}
+
+
+.info{
+
+}
+
+
+

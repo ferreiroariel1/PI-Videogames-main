@@ -3,9 +3,9 @@ import style from './HomeLoader.module.css';
 
 const HomeLoader = () => {
   return (
-    <div className={style.spinner}>
-    <div className={style.spinner1}></div>
-</div>
+    <div className={style.loader}>
+      <div className={style.circle}></div>
+    </div>
   );
 };
 

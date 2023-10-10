@@ -1,49 +1,63 @@
-.detailContainer{
-    /*aca va una imagen*/
-    position: absolute;
-    width: 100%;
-    height: 300vh;
+/* GameDetail.module.css */
+.fondo {
+  background-color: black; /* Fondo negro */
+  min-height: 100vh; /* Mínimo alto del 100% de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.secondContainer{
-    width: 90vw;
-    height: 150vh;
-    margin-left: 5%;
-    border-radius: 1em;
-    background-color: rgba(13, 12, 12, 0.6);
-    font-weight: bold;
-    margin-top: 5%;
-    color: rgb(0, 0, 0);
-    font-size: large;
-    font-weight: bold;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
-    background: linear-gradient(rgba(238, 231, 231, 0.60), rgba(150, 150, 150, 0.25));
+/* GameDetail.module.css */
+.secondContainer {
+  max-width: 50vw; /* Reducir el ancho máximo al 50% de la ventana */
+  background-color: black; /* Fondo negro */
+  font-weight: bold;
+  color: white; /* Texto blanco */
+  font-size: medium; /* Reducir el tamaño de la fuente a medium */
+  border-radius: 1em;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+  background: linear-gradient(rgba(238, 231, 231, 0.60), rgba(150, 150, 150, 0.25));
+  text-align: left;
+  padding: 20px; /* Añadir un espacio interior */
+  margin: 20px; /* Añadir margen para separar del fondo */
+  display: flex;
+  flex-direction: column; /* Mostrar elementos en columna */
 }
 
-.imageDetail{
-    width: 45vw;
-    margin-left: 0.5em;
-    margin-top: 13%;
-    border-radius: 10%;
-    float: left;
-    
-}
-.id{
-    margin-left: 45%;
-    font-size: large;
-    font-weight: 500;
-}
-.gameReleased{
-    margin-left: 45%;
-}
-.gamePlatforms{
-    margin-left: 47%;
+
+/* Estilo para la imagen */
+.imageDetail {
+  max-width: 100%; /* Ajustar la imagen al 100% del contenedor */
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 20px auto 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.gameRating{
-    margin-left: 45%;
-
+/* Estilos para los otros elementos de texto */
+.id,
+.gameReleased,
+.gamePlatforms,
+.gameRating,
+.description,
+h1,
+h2,
+h3 {
+  color: #ffffff; /* Texto blanco */
+  font-size: large;
+  font-weight: bold; /* Añadir negrita para resaltar */
+  text-align: left;
+  margin: 10px 0; /* Espacio vertical entre elementos */
+  word-wrap: break-word; /* Romper palabras largas si es necesario */
+  white-space: normal; /* Manejar el espacio en blanco correctamente */
+  overflow-wrap: break-word; /* Romper palabras largas si es necesario */
 }
-.description{
-    margin-left: 47%;
+
+/* Estilo para el fondo de la carta */
+.cardBackground {
+  background-color: black; /* Fondo negro para la carta */
+  padding: 20px; /* Añadir espacio interior */
+  border-radius: 10px; /* Borde redondeado para la carta */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

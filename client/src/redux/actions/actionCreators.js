@@ -31,6 +31,7 @@ export const getAllGames = () => {
         }
     };
 };
+  
 
 
 //obtiene los videojuegos por nombre del backend

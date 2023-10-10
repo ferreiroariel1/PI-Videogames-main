@@ -1,52 +1,61 @@
-.container{
-    height: fit-content;
+/* Paginado.module.css */
+.container {
     display: flex;
-    flex-direction: row;
-    margin-left: 40%;
-    /* margin-top: 1vh; */
-}
-.previousButton{
-    border: 0.15em bold black;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 20px; /* Añade un margen superior para separar del contenido anterior */
+  }
+  
+  .previousButton,
+  .nextButton {
+    border: 0.15em solid black;
     background-color: cornsilk;
     border-radius: 5px;
     height: 4vh;
-    margin-right: 0.5em;
-    margin-top: 0.2em;
     cursor: pointer;
-}
-.previousButton[disabled]{
+    color: black;
+    font-size: 1em;
+    padding: 0.2em 0.5em;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .previousButton[disabled],
+  .nextButton[disabled] {
     background-color: rgb(242, 239, 227);
-    cursor: no-drop;
-}
-.previousImg{
-    max-width: 1em;
-}
-
-.nextButton{
-    border: 0.15em bold black;
-    background-color: cornsilk;
-    border-radius: 5px;
-    height: 4vh;
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .paginasContainer {
+    color: azure;
+    font-size: 1em;
     margin-left: 0.5em;
-    margin-top: 0.2em;
-    cursor: pointer;
-}
-.nextButton[disabled]{
-    background-color: rgb(242, 239, 227);
-    cursor: no-drop;
-}
-.nextImg{
-    max-width: 1em;
-}
-
-.paginasContainer{
-   margin-left: 0.5em;
-   color: azure;
-}
-
-.input{
-   width: 2vw; 
-   height: 3vh;
-   text-align: center;
-   margin-top: 0.5em;
-}
+  }
+  
+  .input {
+    width: 2vw;
+    height: 3vh;
+    text-align: center;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+    outline: none;
+    margin-left: 0.5em; /* Añade un margen izquierdo para separar del texto */
+  }
+  
+  .input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .input:disabled {
+    background-color: transparent;
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  

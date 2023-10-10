@@ -85,18 +85,30 @@ const CreateGame = () => {
     };
     
     const handleReset = (event) => {
-        event.preventDefault();
-        setForm({
-            name: '',
-            background_image: '',
-            description:'',
-            platforms: [],
-            released: '',
-            rating: 0,
-            genres: []
-        });
-        document.getElementById("platforms").reset();
-    };
+    event.preventDefault();
+    setForm({
+        name: '',
+        background_image: '',
+        description: '',
+        platforms: [],
+        released: '',
+        rating: 0,
+        genres: []
+    });
+
+    // Desmarcar las casillas de verificación de plataformas
+    const platformCheckboxes = document.querySelectorAll('input[name="platforms"]');
+    platformCheckboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+    });
+
+    // Desmarcar las casillas de verificación de géneros
+    const genreCheckboxes = document.querySelectorAll('input[name="genres"]');
+    genreCheckboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+    });
+};
+
     
     const handleClickG = (event) => {
         if (event.target.checked) {
@@ -120,7 +132,7 @@ const CreateGame = () => {
     
     <form onSubmit={(event) => handleSubmit(event)} onReset={(event) => handleReset(event)} className={style.form}>
         <fieldset className={style.fieldset}>
-            <legend className={style.legend}>Create a new Game</legend>
+            <legend className={style.legend}>new Game</legend>
 
             <div className={style.container}>
               <input type="text" id='name' value={form.name} name='name' onChange={(event) => handleChange(event)} className={style.inputtext}/>
