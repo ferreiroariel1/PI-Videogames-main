@@ -110,13 +110,15 @@ const CreateGame = () => {
 };
 
     
-    const handleClickG = (event) => {
-        if (event.target.checked) {
-            setForm({ ...form, genres: [...form.genres, event.target.value] });
-        } else {
-            setForm({ ...form, genres: form.genres.filter((gen) => gen.name !== event.target.value)});
-        }   
-    };
+const handleClickG = (event) => {
+    if (event.target.checked) {
+        setForm({ ...form, genres: [...form.genres, event.target.value] });
+    } else {
+        setForm({ ...form, genres: form.genres.filter((gen) => gen.name !== event.target.value)});
+    }   
+};
+
+
     
     const handleClickP = (event) => {
         if (event.target.checked) {
@@ -169,14 +171,14 @@ const CreateGame = () => {
 
             <div>
                 <label htmlFor="released" className={style.label}>Released: </label>
-               <input type="date" id="released" value={form.released} name='released' onChange={(event) => handleChange(event)} className={style.input}/>
-               <p className={style.error}>{ errors.released}</p>
+                  <input type="date" id="released" value={form.released} name='released' onChange={(event) => handleChange(event)} className={style.input}/>
+                   <p className={style.error}>{ errors.released}</p>
             </div>
 
             <div>
                <label htmlFor="rating" className={style.labelCb}>Rating: </label>
-               <input type="number" id="rating" value={form.rating} name='rating' onChange={(event) => handleChange(event)} min='0' step='0.5' className={style.input}/>
-               <p className={style.error}>{errors.rating}</p>
+                 <input type="number" id="rating" value={form.rating} name='rating' onChange={(event) => handleChange(event)} min='0' step='0.5' className={style.input}/>
+                 <p className={style.error}>{errors.rating}</p>
             </div>
 
             <div>
@@ -184,7 +186,7 @@ const CreateGame = () => {
                 {   genres.sort((a,b) => (a.name > b.name ? 1 : -1)).length ?
                     genres.map((genre) => {
                         return(
-                            <div className={style.checkBox}>
+                            <div className={style.checkBox} >
                                 <label htmlFor={genre.name} key={genre.id} className={style.labelsPyG}>{genre.name}</label>
                                 <input type="checkbox" id={genre.name} value={genre.name} onClick={(event) => handleClickG(event)}  className={style.input}/>
                                 
@@ -196,7 +198,7 @@ const CreateGame = () => {
             </div>
             
         </fieldset>
-        <input type="submit" value="Create Game" className={style.buttons} />
+        <input disabled={!form.name || !form.background_image || !form.description || !form.released || !form.rating || !form.platforms || !form.genres || errors.name || errors.background_image || errors.description|| errors.released || errors.rating || errors.platforms || errors.genres } type="submit" value="Create Game" className={style.buttons} />
         <input type="reset" value="Reset Form" className={style.buttons} />
     </form>
   );

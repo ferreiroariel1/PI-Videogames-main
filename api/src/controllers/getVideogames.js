@@ -40,7 +40,7 @@ const getApiInfo = async () => {
   }
 };
 
-// Resto del código de la función getVideogames permanece sin cambios
+
 
 
 //BUSCA TODOS LOS VIDEOJUEGOS Y TAMBIEN RECUPERA LOS NOMBRES DE LOS GENEROS ASOCIADOS A ESOS VIDEOJUEGOS
@@ -80,7 +80,6 @@ const getDbInfo = async () => {
 //RUTA 1: OBTENER TODOS LOS JUEGOS
 
 const getVideogames = async (req, res) => {
-  console.log("estos son los juegos")
    try {
      const apiInfo = await getApiInfo();
      const dbInfo = await getDbInfo();
@@ -114,16 +113,16 @@ const getGamesByName = async (req, res) => {
   }
 
   try {
-    // Convierte el nombre a minúsculas
+   
     const nameLower = name.toLowerCase();
 
-    // Realiza una llamada a la API externa para obtener juegos
+    
     const apiGames = await getApiInfo();
 
-    // Realiza una consulta a la base de datos local para obtener juegos
+ 
     const dbGames = await getDbInfo();
 
-    // Combina los juegos de la API y de la base de datos
+   
     const allGames = [...apiGames, ...dbGames];
 
     // Filtra los juegos por nombre
@@ -131,11 +130,11 @@ const getGamesByName = async (req, res) => {
       game.name.toLowerCase().includes(nameLower)
     );
 
-    // Comprueba si se encontraron juegos
+    
     if (filteredGames.length === 0) {
       return res.status(404).send("No se encontraron juegos que coincidan.");
     } else if (filteredGames.length > 15) {
-      // Si hay más de 15 juegos, devuelve los primeros 15
+      
       const slicedGames = filteredGames.slice(0, 15);
       return res.status(200).json(slicedGames);
     } else {
@@ -157,7 +156,7 @@ const getGamesByName = async (req, res) => {
 
 const getVideogameById = async (req, res) => {
   const { id } = req.params;
-  console.log("ruta id funciona bien");
+  
 
   try {
     //caso: id no es un numeor por lo tanto es un uuid y eso quiere decir que es un juego de la base de datos
@@ -179,7 +178,7 @@ const getVideogameById = async (req, res) => {
         rating: gameApi.data.rating,
         platforms: gameApi.data.platforms.map((el) => el.platform.name),
       };
-      console.log("RUTA ID FUNCIONA", result);
+      
       return res.status(200).json(result);
     }
 

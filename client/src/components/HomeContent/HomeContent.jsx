@@ -30,7 +30,7 @@ const HomeContent = () => {
   },[dispatch, allGames]);
 
 
-  
+  //manejadores de eventos
   const handleChangeByName = (event) => {
     event.preventDefault();
     dispatch(orderByName(event.target.value));
@@ -68,28 +68,29 @@ const HomeContent = () => {
   return(
     <>
     <NavBar setPagina={setPagina} setInputP={setInputP} handleChangeByName={handleChangeByName} handleChangeByRating={handleChangeByRating} handleChangeCreation={handleChangeCreation} handleChangeGenres={handleChangeGenres}  genres={genres}/>
+
     <Paginado maximo={maximo} pagina={pagina} setPagina={setPagina} inputP={inputP} setInputP={setInputP} className={style.paginado}/>
-      <div className={style.cardsContainer}>
-        {
-         currentGames.length?
-         currentGames.map((game) => {
     
-            return(
-              <div className={style.eachCard}>
-                <Card
-                  id={game.id}
-                  key={game.id}
-                  background_image={game.background_image}
-                  name={game.name}
-                  genres={game.genres.join(', ')}
-                  rating={game.rating}
-                />
-              </div>
-            );
-          }) : <HomeLoader />
-        }
-        
-      </div>
+    <div className={style.cardsContainer}>
+  {
+   currentGames.length?
+   currentGames.map((game) => {
+      return (
+        <div key={game.id} className={style.eachCard}>
+          <Card
+            id={game.id}
+            background_image={game.background_image}
+            name={game.name}
+            genres={game && game.genres ? game.genres.join(', ') : ''}
+
+            rating={game.rating}
+          />
+        </div>
+      );
+    }) : <HomeLoader />
+  }
+</div>
+
          
       </>
   );

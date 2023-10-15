@@ -43,7 +43,7 @@ const rootReducer = (state=initialState, action) => {
             }    
         case FILTER_BY_CREATION:
             const allGames1 = state.allGames;
-            const filterCreation = action.payload === 'created' ? allGames1.filter((game) => game.createdInDb) : allGames1;
+            const filterCreation = action.payload === 'created' ? allGames1.filter((game) => game.createInDb) : allGames1;
             return{
                 ...state,
                 games: filterCreation
