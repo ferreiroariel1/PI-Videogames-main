@@ -6,7 +6,9 @@ const LandingPage = () => {
   return (
     <div className={style.wrapper}>
         <button className={style.button}><Link to='/home' className={style.link}>START</Link></button>
+        
     </div>
+    
   );
 };
 

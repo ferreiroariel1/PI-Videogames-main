@@ -1,24 +1,19 @@
 /* Filter.module.css */
+
 .filterContainer {
   display: flex;
   flex-direction: row;
-  margin-left: 0.9em;
-  margin-right: 0.9em;
   justify-content: space-between; /* Espacio uniforme entre elementos */
   align-items: center; /* Centra verticalmente los elementos */
 }
 
-.filGames {
-  margin-right: 1em;
-}
-
+/* Añade márgenes uniformes a todos los filtros */
 .select {
   width: 10vw;
-  height: 35px;
+  height: 30px;
   padding: 4px;
-  margin-top: 5px;
-  border-radius: 4px;
-  box-shadow: 2px 2px 8px #999;
+  margin: 5px; /* Añade un margen uniforme a todos los lados (arriba, derecha, abajo, izquierda) */
+  border-radius: 1px;
   background: #eee;
   border: none;
   outline: none;
@@ -28,7 +23,6 @@
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-  filter: drop-shadow(13px 3px 3px #000);
   font-size: medium;
 }
 
@@ -39,10 +33,9 @@
 
 .label {
   position: relative;
-  text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.81);
   font-size: large;
   font-weight: 500;
-  color: rgba(14, 14, 15, 0.825);
+  color: #fff; /* Color de texto blanco */
 }
 
 .label:after {
@@ -71,3 +64,37 @@
   pointer-events: none;
   display: block;
 }
+
+
+
+/* Mover los elementos hacia abajo */
+.rating {
+  margin-bottom: 3px; /* Aumenta el margen inferior para mover el grupo hacia abajo */
+  margin-left: -50px;
+  margin-right: 70px;
+  padding: 0px;
+}
+
+/* Mover los elementos hacia arriba */
+.names {
+  margin-top: -3px; /* Aumenta el margen superior para mover el grupo hacia arriba */
+  margin-left: -22px;
+  padding: 0px;
+}
+
+/* Mover los elementos hacia la izquierda */
+.filGenres {
+  margin-left: 15px; /* Aumenta el margen izquierdo para mover el grupo hacia la izquierda */
+  margin-top: -3px;
+  margin-right: -10px;
+  padding: 0px;
+}
+
+/* Mover los elementos hacia la derecha */
+.filGames {
+  margin-top: -3px;
+  margin-right: -30px;
+  padding: 0px;
+}
+
+

@@ -29,9 +29,10 @@ const SearchBar = ({ setPagina, setInputP }) => {
   return (
     <div className={style.searchBarContainer}>
       <div>
-        <label htmlFor="searchGame" className={style.label}>Search Game: </label>
-        <input type="search" id='searchGame' value={input} onChange={(event) => handleChange(event)}  onKeyDown={(event) => onKeyDown(event)} className={style.input}/>
+        <input placeholder="Search Game" type="search" id='searchGame' value={input} onChange={(event) => handleChange(event)}  onKeyDown={(event) => onKeyDown(event)} className={style.input}/>
+        <div className={style.positionbutton}>
         <button type="submit" onClick={(event) => handlerSubmit(event)} className={style.button}>search</button>
+        </div>
       </div>
     </div>
   );

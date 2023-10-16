@@ -137,20 +137,20 @@ const handleClickG = (event) => {
             <legend className={style.legend}>new Game</legend>
 
             <div className={style.container}>
-              <input type="text" id='name' value={form.name} name='name' onChange={(event) => handleChange(event)} className={style.inputtext}/>
+              <input placeholder='name' type="text" id='name' value={form.name} name='name' onChange={(event) => handleChange(event)} className={style.inputtext}/>
               <label htmlFor="name" className={style.labeltext}>Name: </label>
               <p className={style.error}>{errors.name}</p>
             </div>
 
             <div className={style.container}>
-              <input type="text" id='image' value={form.background_image} name='background_image' onChange={(event) => handleChange(event)} className={style.inputtext}/>
+              <input placeholder='image' type="text" id='image' value={form.background_image} name='background_image' onChange={(event) => handleChange(event)} className={style.inputtext}/>
               <label htmlFor="image" className={style.labeltext}>Image: </label>
               <p className={style.error}>{ errors.background_image}</p>
             </div>
 
             <div className={style.textareaContainer}>
-               <label htmlFor="description" className={style.label}>Description: </label>
-               <textarea id="description" cols="30" rows="10" value={form.description} name='description' onChange={(event) => handleChange(event)} className={style.textarea}/>
+               <label  htmlFor="description" className={style.label}>Description: </label>
+               <textarea placeholder='description...' id="description" cols="30" rows="10" value={form.description} name='description' onChange={(event) => handleChange(event)} className={style.textarea}/>
                <p className={style.error}>{errors.description}</p>
             </div>
 
@@ -196,10 +196,11 @@ const handleClickG = (event) => {
                 }
                 <p className={style.error}>{errors.genres}</p>
             </div>
+            <input disabled={!form.name || !form.background_image || !form.description || !form.released || !form.rating || !form.platforms || !form.genres || errors.name || errors.background_image || errors.description|| errors.released || errors.rating || errors.platforms || errors.genres } type="submit" value="Create Game" className={style.buttons} />
+        <input type="reset" value="Reset Form" className={style.buttons} />
             
         </fieldset>
-        <input disabled={!form.name || !form.background_image || !form.description || !form.released || !form.rating || !form.platforms || !form.genres || errors.name || errors.background_image || errors.description|| errors.released || errors.rating || errors.platforms || errors.genres } type="submit" value="Create Game" className={style.buttons} />
-        <input type="reset" value="Reset Form" className={style.buttons} />
+        
     </form>
   );
 };

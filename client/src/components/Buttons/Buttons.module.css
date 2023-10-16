@@ -2,12 +2,12 @@
 .buttonsContainer {
     display: flex;
     align-items: center;
-    gap: 20px; /* Espacio entre elementos */
+    gap: 15px; /* Espacio entre elementos */
   }
   
   button {
-    padding: 12px 20px; /* Aumenta el espacio interno del botón */
-    font-size: 16px; /* Tamaño de fuente */
+    padding: 10px 10px; /* Aumenta el espacio interno del botón */
+    font-size: 15px; /* Tamaño de fuente */
     font-weight: bold; /* Texto en negrita */
     background-color: rgba(51, 51, 51, 0.8); /* Fondo con transparencia */
     color: white; /* Texto en blanco para todos los botones */
@@ -35,3 +35,28 @@
     box-shadow: 0 2px 4px rgba(0, 123, 255, 0.4);
   }
   
+  /* Estilo para los enlaces no visitados (por defecto) */
+a {
+  color: white; /* Establece el color que desees para los enlaces no visitados */
+  text-decoration: none; /* Elimina el subrayado de los enlaces si lo deseas */
+}
+
+/* Estilo para los enlaces visitados */
+a:visited {
+  color: white; /* Establece el color que desees para los enlaces visitados */
+}
+
+.home{
+  width: 80px;
+  height: 50px;
+}
+
+.newgame{
+  width: 80px;
+  height: 50px;
+}
+
+.reloadgame{
+  width: 80px;
+  height: 50px;
+}

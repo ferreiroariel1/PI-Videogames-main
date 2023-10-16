@@ -82,7 +82,6 @@ const HomeContent = () => {
             background_image={game.background_image}
             name={game.name}
             genres={game && game.genres ? game.genres.join(', ') : ''}
-
             rating={game.rating}
           />
         </div>

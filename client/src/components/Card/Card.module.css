@@ -3,18 +3,18 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.2); /* Borde negro fino */
-  border-radius: 0; /* Sin bordes redondeados */
+  border: 1px solid rgba(83, 82, 82, 0.8);
+  border-radius: 10px;
   padding: 20px;
   margin: 15px;
-  width: 240px;
+  width: 300px; /* Tamaño fijo de la carta */
+  height: -200px;
   transition: transform 0.3s ease-in-out;
-  background-color: #0a0a0a; /* Fondo gris */
+  background-color: black;
   overflow: hidden;
   position: relative;
 }
 
-/* Seudo-elemento antes de la tarjeta */
 .card::before {
   content: "";
   position: absolute;
@@ -23,54 +23,69 @@
   right: -10px;
   bottom: -10px;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.5); /* Borde blanco brillante */
+  background: black;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  border-radius: 0; /* Sin bordes redondeados */
+  border-radius: 10px; /* Ajusta el radio de las esquinas */
 }
 
-/* Efecto de desenfoque al pasar el cursor sobre la tarjeta */
 .card:hover::before {
-  opacity: 1;
+  opacity: 0; /* Establece la opacidad a 0 para eliminar el efecto de estilo invisible */
   backdrop-filter: blur(8px);
 }
 
-/* Efecto de escala al pasar el cursor sobre la tarjeta */
 .card:hover {
-  transform: scale(1.07); /* Aumenta el valor de escala */
+  transform: scale(1.05); /* Solo se agranda un poco al pasar el cursor */
 }
 
-/* Estilos para la imagen */
 .image {
-  width: 100%;
-  height: auto;
-  border-radius: 0; /* Sin bordes redondeados en la imagen */
-  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px; /* Ajusta el radio de las esquinas */
+  transition: transform 0.3s ease-in-out; /* Añade transición al agrandarse */
 }
 
-/* Reducción del brillo de la imagen al pasar el cursor sobre la tarjeta */
-.card:hover .image {
-  filter: brightness(0.85); /* Ajusta el brillo */
-  transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+.card:hover  {
+  transform: scale(1.07); /* Agrandar un poco al pasar el cursor */
 }
 
-/* Estilo para el nombre de la tarjeta */
 .name {
   font-size: 20px;
-  margin: 10px 0;
-  color: white; /* Texto blanco */
-  text-decoration: none; /* Elimina el subrayado */
+  margin: 10px 0px;
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  width: -100px;
+  height: 60px;
+  padding: 0px;
 }
 
-/* Estilo para géneros y calificación */
-.genres,
-.rating {
-  background-color: rgba(0, 0, 0, 0.8);
+.genres {
+  background-color: black;
   color: white;
-  padding: 5px 0;
-  border-radius: 0; /* Sin bordes redondeados en géneros y calificación */
-  margin-top: 5px;
-  font-size: 13px;
+  padding: 10px 0;
+  border-radius: 0px; /* Ajusta el radio de las esquinas */
+  margin-top: 10px;
+  margin-left: 0px;
+  font-size: 10px;
   text-align: center;
-  text-decoration: none; /* Elimina el subrayado */
+  text-decoration: none;
+  width: -100px;
+  height: 60px;
+}
+
+.rating {
+  background-color: rgba(255, 255, 255, 255);
+  color: rgb(11, 11, 11);
+  width: 35px; /* Ancho del contenedor redondo */
+  height: 35px; /* Altura del contenedor redondo */
+  border-radius: 50%; /* Hace que el contenedor sea redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  margin-left: 125px;
+  border: 4px solid rgb(0, 0, 255);
 }

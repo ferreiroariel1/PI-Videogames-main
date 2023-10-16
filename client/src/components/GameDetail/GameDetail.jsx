@@ -22,7 +22,9 @@ const GameDetail = () => {
   return (
     <div className={style.fondo}>
       <div className={style.detailContainer}>
+       
         <NavBar />
+        
         {game && game.name ? (
           <div className={style.secondContainer}>
             <div>
@@ -31,8 +33,8 @@ const GameDetail = () => {
               <p dangerouslySetInnerHTML={{ __html: game.description }} className={style.description} />
             </div>
             
-            {game && game.platforms && (
-           <h2 className={style.gamePlatforms}>Available at: {game.platforms.join(' , ')}</h2>)}
+            {game.platforms && game.platforms && (
+           <h2 className={style.gamePlatforms}>Available at: {game.platforms.join(", ")}</h2>)}
 
              {game.genres && game.genres.length > 0 && (
            <h2>Game Genres: {game.genres.map((genre) => genre.name).join(', ')}</h2>)}

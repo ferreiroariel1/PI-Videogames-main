@@ -3,14 +3,14 @@ const { Op } = require("sequelize");
 
 const newGame = async (req, res) => {
   try {
-    const { name, background_image, description, released, rating, plataforms, genres } = req.body;
+    const { name, background_image, description, released, rating, platforms, genres } = req.body;
 
     if (!name || !description)
       return res.status(404).send("Creación cancelada por falta de información!");
 
     // Crear un nuevo juego
     let newGame = await Videogame.create({
-      name, background_image, description, released, rating, plataforms
+      name, background_image, description, released, rating, platforms
     });
 
     // Buscar los géneros en la base de datos

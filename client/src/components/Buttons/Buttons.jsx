@@ -16,11 +16,11 @@ const Buttons = () => {
 
   return (
     <div className={style.buttonsContainer}>
-        <button onClick={(event) => handleClick(event)}>Reload Games</button>
+        <button className={style.reloadgame} onClick={(event) => handleClick(event)}>Reload Games</button>
       
-        <button><Link to='/home'>Home</Link></button>
+        <button className={style.home}><Link to='/home'>Home</Link></button>
         
-        <button><Link to='/form'>New Game</Link></button>
+        <button className={style.newgame}><Link to='/form'>New Game</Link></button>
         
     </div>
   );
