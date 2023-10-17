@@ -5,20 +5,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black; /* Cambia el color de fondo según tus preferencias */
+  background-color: black;
   padding: 10px 20px;
   color: white;
   z-index: 100;
   transition: background-color 0.3s;
-  width: 96,5%;
+  width: 100%; /* Cambiado a 100% para ajustarse al ancho completo */
   height: 50px;
-}
 
+  @media (max-width: 768px) {
+    flex-direction: column; /* Cambia la dirección del diseño en pantallas más pequeñas */
+    height: auto; /* Elimina la altura fija para ajustar según el contenido */
+    padding: 10px; /* Espaciado interno reducido */
+  }
+}
 /* Resto de tus estilos existentes aquí */
 
 .filAndOrd {
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Cambia la dirección del diseño en pantallas más pequeñas */
+    gap: 10px; /* Espaciado entre elementos */
+  }
 }
 
 /* Estilo para los botones en la esquina izquierda */

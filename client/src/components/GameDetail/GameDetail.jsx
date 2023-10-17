@@ -36,8 +36,10 @@ const GameDetail = () => {
             {game.platforms && game.platforms && (
            <h2 className={style.gamePlatforms}>Available at: {game.platforms.join(", ")}</h2>)}
 
-             {game.genres && game.genres.length > 0 && (
-           <h2>Game Genres: {game.genres.map((genre) => genre.name).join(', ')}</h2>)}
+                 <h2>Game Genres: {game.genres && game.genres.length > 0 ? ( game.genres[0].name ? 
+                  (game.genres.map((genre) => genre.name).join(', '))
+                   : (game.genres.join(', '))) : "No genres available"}</h2>
+
 
             <h2 className={style.gameRating}>Average rating: {game.rating}</h2>
             <h3 className={style.gameReleased}>Released at: {game.released}</h3>

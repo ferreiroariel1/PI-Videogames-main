@@ -169,20 +169,8 @@ const handleClickG = (event) => {
                 <p className={style.error}>{errors.platforms}</p>
             </div>
 
-            <div>
-                <label htmlFor="released" className={style.label}>Released: </label>
-                  <input type="date" id="released" value={form.released} name='released' onChange={(event) => handleChange(event)} className={style.input}/>
-                   <p className={style.error}>{ errors.released}</p>
-            </div>
-
-            <div>
-               <label htmlFor="rating" className={style.labelCb}>Rating: </label>
-                 <input type="number" id="rating" value={form.rating} name='rating' onChange={(event) => handleChange(event)} min='0' step='0.5' className={style.input}/>
-                 <p className={style.error}>{errors.rating}</p>
-            </div>
-
-            <div>
-            <label htmlFor="genres" className={style.labelCb}>Genres: </label>
+              <div>
+            <label htmlFor="genres" className={style.labelCb}>GENRES: </label>
                 {   genres.sort((a,b) => (a.name > b.name ? 1 : -1)).length ?
                     genres.map((genre) => {
                         return(
@@ -196,6 +184,20 @@ const handleClickG = (event) => {
                 }
                 <p className={style.error}>{errors.genres}</p>
             </div>
+
+            <div>
+                <label htmlFor="released" className={style.label}>Released: </label>
+                  <input type="date" id="released" value={form.released} name='released' onChange={(event) => handleChange(event)} className={style.input}/>
+                   <p className={style.error}>{ errors.released}</p>
+            </div>
+
+            <div>
+               <label htmlFor="rating" className={style.labelCb}>Rating: </label>
+                 <input type="number" id="rating" value={form.rating} name='rating' onChange={(event) => handleChange(event)} min='0' step='0.5' className={style.input}/>
+                 <p className={style.error}>{errors.rating}</p>
+            </div>
+
+           
             <input disabled={!form.name || !form.background_image || !form.description || !form.released || !form.rating || !form.platforms || !form.genres || errors.name || errors.background_image || errors.description|| errors.released || errors.rating || errors.platforms || errors.genres } type="submit" value="Create Game" className={style.buttons} />
         <input type="reset" value="Reset Form" className={style.buttons} />
             

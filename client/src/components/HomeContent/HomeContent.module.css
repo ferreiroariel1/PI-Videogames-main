@@ -2,18 +2,24 @@
 
 .cardsContainer {
   display: flex;
-  justify-content: center; /* Centra las cartas horizontalmente */
-  align-items: center; /* Centra las cartas verticalmente */
-  flex-wrap: wrap; /* Permite que las cartas se envuelvan a la siguiente línea si es necesario */
-  
-  
-  margin: 0px auto;
-  padding: 0px 0px 0px 0px; /* Añade un poco de espacio superior, inferior y solo a la derecha */
-  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .eachCard {
-  width: 10px;
-  flex: 0 0 calc(33.33% - 20px); /* Tres tarjetas por columna con margen entre ellas */
-  margin: 110 5px; /* Margen horizontal entre las cartas (ajustado a 5px) */
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 10px; /* Márgenes ajustados para un mejor espaciado */
+
+  @media (max-width: 768px) {
+    flex: 0 0 calc(50% - 20px); /* Dos cartas por fila en pantallas más pequeñas */
+  }
+
+  @media (max-width: 480px) {
+    flex: 0 0 calc(100% - 20px); /* Una carta por fila en pantallas aún más pequeñas */
+  }
 }
+
